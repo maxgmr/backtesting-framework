@@ -1,6 +1,8 @@
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
 
+use crate::Timestamp;
+
 /// A portfolio that tracks cash, positions, and equity over time.
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct Portfolio {
@@ -43,10 +45,6 @@ pub struct Position {
     /// The average cost paid for each constituent of this position.
     pub avg_cost: f64,
 }
-
-/// A Unix timestamp.
-#[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Serialize, Deserialize)]
-pub struct Timestamp(i64);
 
 /// Value of equity at a point in time.
 #[derive(Debug, Clone, Serialize, Deserialize)]

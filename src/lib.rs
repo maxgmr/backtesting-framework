@@ -11,6 +11,12 @@
     clippy::todo
 )]
 
+use serde::{Deserialize, Serialize};
+
 mod portfolio;
 
 pub use portfolio::*;
+
+/// A Unix timestamp.
+#[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Serialize, Deserialize)]
+pub struct Timestamp(i64);

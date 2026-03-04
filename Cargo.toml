@@ -14,3 +14,4 @@ codegen-units = 1
 lto = "fat"
 
 [dependencies]
+serde = { version = "1.0", features = ["derive"] }

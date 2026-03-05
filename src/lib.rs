@@ -16,10 +16,14 @@ use serde::{Deserialize, Serialize};
 mod asset;
 mod portfolio;
 mod price_data;
+#[cfg(feature = "yahoo")]
+mod yahoo;
 
 pub use asset::*;
 pub use portfolio::*;
 pub use price_data::*;
+#[cfg(feature = "yahoo")]
+pub use yahoo::*;
 
 /// A Unix timestamp.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Serialize, Deserialize)]

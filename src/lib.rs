@@ -15,6 +15,7 @@ use serde::{Deserialize, Serialize};
 use time::OffsetDateTime;
 
 mod asset;
+#[cfg(feature = "plotting")]
 mod plotting;
 mod portfolio;
 mod price_data;
@@ -22,6 +23,7 @@ mod price_data;
 mod yahoo;
 
 pub use asset::*;
+#[cfg(feature = "plotting")]
 pub use plotting::*;
 pub use portfolio::*;
 pub use price_data::*;

@@ -44,8 +44,8 @@ pub async fn yahoo_fetch_price_history(
 /// parsed as Unix epochs.
 pub async fn yahoo_fetch_trailing_prices(
     ticker: &str,
-    interval: YahooInterval,
     range: YahooRange,
+    interval: YahooInterval,
 ) -> Result<PriceData, yahoo::YahooError> {
     let provider = yahoo::YahooConnector::new()?;
     let response = provider
@@ -430,7 +430,7 @@ mod tests {
     #[tokio::test]
     async fn get_trailing_prices() {
         let price_hist =
-            yahoo_fetch_trailing_prices("ENB.TO", YahooInterval::OneMonth, YahooRange::SixMonths)
+            yahoo_fetch_trailing_prices("ENB.TO", YahooRange::SixMonths, YahooInterval::OneMonth)
                 .await
                 .unwrap();
         assert_eq!(price_hist.bars.len(), 6);
